@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config charset="UTF-8">
+	<include path="functions.xml"/>
+	
+	<!--query : запрос, по которому нужно собрать объявления с Яндекс.авто -->	
+    <!--<var-def name="query">ВАЗ 2109</var-def> -->
+    
+	<var-def name="car">
+	  	<call name="download-multipage-list">
+		  	<call-param name="pageUrl">http://auto.yandex.ru/search.xml?text=<var name="query"/></call-param>
+	       	<call-param name="nextXPath">//a[starts-with(., 'следующая')]/@href</call-param>
+            <call-param name="itemXPath">//tr[@id]</call-param>
+            <call-param name="maxloops"><var name="loops"/></call-param>
+		</call>	
+	</var-def>	
+	
+	<file action="write" path="cars-ad.xml" charset="UTF-8">
+		 <![CDATA[ <cars> ]]>
+		 <loop item="item" index="i">
+            <list><var name="car"/></list>
+            <body>
+                <xquery>
+                    <xq-param name="item" type="node()"><var name="item"/></xq-param>
+                    <xq-expression>
+                    	<![CDATA[
+                            declare variable $item as node() external;
+                            let $price := data($item//div[@class='p']) 
+                            let $year := data($item//span[@class='year'])
+                            let $description := data($item//li[not(@*)])
+                            let $model := data($item//h4)
+                            let $picture := data($item//a//img//@src)
+                            let $link := data($item//h4//a//@href)
+                            
+                            return
+                                    <car>
+                                    	<model>{normalize-space($model)}</model>
+                                        <price>{normalize-space($price)}</price>
+                                        <year>{normalize-space($year)}</year>
+                                        <description>{$description}</description>
+                                        <picture>{($picture)}</picture>
+                                        <link>{$link}</link>
+                                    </car>
+                    ]]>
+                    </xq-expression>
+                </xquery>
+            </body>
+        </loop>	
+		 <![CDATA[ </cars> ]]>
+	</file>
+	
+</config>
+

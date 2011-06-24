@@ -1,0 +1,27 @@
+<component name="libraryTable">
+  <library name="webharvest">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/webharvest/webharvest_2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/saxon9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/saxon9-dom.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/commons-net-ftp-2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/commons-email-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/commons-httpclient-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/js.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/log4j-1.2.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/groovy-all-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/htmlcleaner.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/commons-codec-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/commons-collections-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/bsh.jar!/" />
+      <root url="jar://$PROJECT_DIR$/webharvest/commons-cli-1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/webharvest/doc" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
