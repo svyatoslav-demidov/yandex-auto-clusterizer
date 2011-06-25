@@ -29,8 +29,8 @@ public class ParserYalet extends AbstractDbYalet {
             res.add(prepareAnswer("Ошибочный запрос"));
             return;
         }
-        //Parser parser = new Parser("resources/wh-config-template.xml", "resources/");
-        //parser.parse(query, loops);
+        Parser parser = new Parser("resources/wh-config-template.xml", "resources/");
+        parser.parse(query, loops);
         List<Car> carsAds = new DataLoader("resources/cars-ad.xml").getListOfCarsAds();
         carsAds = makeClusters(carsAds);
         DataStore dataStore = new DataStore(jdbcTemplate);
