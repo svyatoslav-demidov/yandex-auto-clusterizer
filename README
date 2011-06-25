@@ -2,3 +2,5 @@ src/datastore/ : .sql для MySQL
 src/scripts/ : конфигурация лога и beans файл
 src/java/ : директория с файлами исходников
 report/ : небольшой отчет
+
+Для запуска требуется выполнить /core/build/classes/net/sf/xfresh/util/Starter.java с адресом beans-файла в параметрах
