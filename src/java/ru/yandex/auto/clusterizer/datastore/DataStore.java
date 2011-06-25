@@ -26,8 +26,8 @@ public class DataStore {
     }
 
     public void writeCarToDataStore(Car car) {
-        jdbcTemplate.update("INSERT INTO cars_ads (model, price, auction, year, description," +
-                " picture, link, cluster_id) VALUES(?, ?, ?, ?, ?, ?, ?, ?);", car.getModel(), car.getPrice(), car.getAuction(),
+        jdbcTemplate.update("INSERT INTO cars_ads (model, price, year, description," +
+                " picture, link, cluster_id) VALUES(?, ?, ?, ?, ?, ?, ?);", car.getModel(), car.getPrice(),
                 car.getYear(), car.getDescription(), car.getPicture(), car.getLink(), car.getClusterId());
     }
 

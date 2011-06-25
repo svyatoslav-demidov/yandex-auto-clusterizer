@@ -138,7 +138,7 @@ public class Metrics {
     }
 
     private static double getDistanceByMileage(String mileageA, String mileageB) {
-        if (mileageA.equals(mileageB)){
+        if (mileageA.equals(mileageB)) {
             return 0.0;
         }
         if (mileageA.length() == 0 || mileageB.length() == 0) {
@@ -152,7 +152,7 @@ public class Metrics {
         if (valueB < 1000) {
             valueB *= 1000;
         }
-        if (((double) Math.abs(valueA - valueB)) / Math.max(valueA, valueB) < 0.8){
+        if (((double) Math.abs(valueA - valueB)) / Math.max(valueA, valueB) < 0.8) {
             return 0.2;
         }
         return 1.0;
@@ -192,8 +192,8 @@ public class Metrics {
         return "";
     }
 
-    private static double getDistanceByBodytype(String bodytepeA, String bodytypeB){
-        if (bodytepeA.equals(bodytypeB)){
+    private static double getDistanceByBodytype(String bodytepeA, String bodytypeB) {
+        if (bodytepeA.equals(bodytypeB)) {
             return 0.0;
         }
         if (bodytepeA.length() == 0 || bodytypeB.length() == 0) {
@@ -203,7 +203,7 @@ public class Metrics {
     }
 
     private static double getDistanceByDescription(String descriptionA, String descriptionB) {
-        if (descriptionA.equals(descriptionB)){
+        if (descriptionA.equals(descriptionB)) {
             return 0.0;
         }
         StringTokenizer stA = new StringTokenizer(descriptionA, "\n ,-!@#$%^&*()/\t");
@@ -222,15 +222,14 @@ public class Metrics {
             String word = stB.nextToken();
             if (word.length() >= 2) {
                 hsB.add(word);
-                if (hsA.contains(word)){
+                if (hsA.contains(word)) {
                     duplicates++;
                 }
             }
         }
 
 
-
-        return 1.0 - ((double) duplicates)/ ((double)(Math.max(hsA.size(), hsB.size())));
+        return 1.0 - ((double) duplicates) / ((double) (Math.max(hsA.size(), hsB.size())));
     }
 
 
@@ -279,13 +278,10 @@ public class Metrics {
         //Compare descriptions
         double distanceByDescription = getDistanceByDescription(descriptionA, descriptionB);
 
-
-//        double distance = distanceByColor * distanceByColor + distanceByBodytype*distanceByBodytype + distanceByPrice*distanceByPrice +
-//                + distanceByMileage*distanceByMileage + distanceByYear*distanceByYear + distanceByCondition*distanceByCondition +
-//                + distanceByDescription*distanceByDescription;
-        double distance = distanceByColor + distanceByBodytype + distanceByPrice +
-                        + distanceByMileage + distanceByYear + distanceByCondition +
-                        + distanceByDescription;
+        //prepearing distance
+        double distance = distanceByColor*1.1 + distanceByBodytype*1.1 + distanceByPrice*1.1 +
+                +distanceByMileage*1.1 + distanceByYear*1.1 + distanceByCondition +
+                +distanceByDescription;
 
         return (distance);
     }

@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class CarsMapper implements ParameterizedRowMapper<Car> {
 
     public Car mapRow(ResultSet resultSet, int i) throws SQLException {
-        return new Car(resultSet.getString("model"), resultSet.getString("price"), resultSet.getString("auction"),
+        return new Car(resultSet.getString("model"), resultSet.getString("price"),
                 resultSet.getString("year"), resultSet.getString("description"), resultSet.getString("picture"),
                 resultSet.getString("link"), resultSet.getInt("cluster_id"));
     }

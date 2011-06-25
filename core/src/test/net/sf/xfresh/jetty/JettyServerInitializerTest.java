@@ -1,13 +1,8 @@
 package net.sf.xfresh.jetty;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.springframework.beans.factory.annotation.Required;
-import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
 
-import java.io.*;
+import java.io.InputStreamReader;
 
 import static org.springframework.util.FileCopyUtils.copyToString;
 

@@ -6,7 +6,6 @@ import net.sf.xfresh.db.AbstractDbYalet;
 import ru.yandex.auto.clusterizer.datastore.DataStore;
 import ru.yandex.auto.clusterizer.model.Car;
 import ru.yandex.auto.clusterizer.util.DataLoader;
-import ru.yandex.auto.clusterizer.util.Parser;
 
 import java.util.List;
 
@@ -19,7 +18,7 @@ import static ru.yandex.auto.clusterizer.util.ViewProcessor.prepareAnswer;
  * @user: svyd
  * @date: 21.06.11
  */
-public class ParserYalet extends AbstractDbYalet{
+public class ParserYalet extends AbstractDbYalet {
     public void process(InternalRequest req, InternalResponse res) {
         int loops = req.getIntParameter("loops", 0);
         String query = req.getParameter("query");

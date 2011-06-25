@@ -1,8 +1,8 @@
 package net.sf.xfresh.mock;
 
-import net.sf.xfresh.core.Yalet;
 import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
+import net.sf.xfresh.core.Yalet;
 
 /**
  * Date: 21.04.2007

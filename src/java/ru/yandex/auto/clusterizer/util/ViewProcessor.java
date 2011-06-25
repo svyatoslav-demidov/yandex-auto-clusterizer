@@ -17,7 +17,7 @@ public class ViewProcessor {
 
     public static Xmler.Tag convertCarToTag(Car car) {
         return Xmler.tag("car", Arrays.asList(Xmler.tag("model", car.getModel()), Xmler.tag("year", car.getYear()),
-                Xmler.tag("price", car.getPrice()), Xmler.tag("auction", car.getAuction()), Xmler.tag("description", car.getDescription()),
+                Xmler.tag("price", car.getPrice()),  Xmler.tag("description", car.getDescription()),
                 Xmler.tag("link", car.getLink()),
                 Xmler.tag("picture", car.getPicture()), Xmler.tag("cluster-id", Integer.toString(car.getClusterId()))));
     }

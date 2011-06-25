@@ -17,7 +17,6 @@ package ru.yandex.auto.clusterizer.model;
 public class Car {
     private String model;
     private String price;
-    private String auction;
     private String year;
     private String description;
     private String picture;
@@ -40,13 +39,6 @@ public class Car {
         this.price = price;
     }
 
-    public String getAuction() {
-        return auction;
-    }
-
-    public void setAuction(String auction) {
-        this.auction = auction;
-    }
 
     public String getYear() {
         return year;
@@ -88,11 +80,10 @@ public class Car {
         this.clusterId = clusterId;
     }
 
-    public Car(String model, String price, String auction, String year, String description, String picture, String link, int clusterId) {
+    public Car(String model, String price, String year, String description, String picture, String link, int clusterId) {
 
         this.model = model;
         this.price = price;
-        this.auction = auction;
         this.year = year;
         this.description = description;
         this.picture = picture;
@@ -105,7 +96,6 @@ public class Car {
         return "Car{" +
                 "model='" + model + '\'' +
                 ", price='" + price + '\'' +
-                ", auction='" + auction + '\'' +
                 ", year='" + year + '\'' +
                 ", description='" + description + '\'' +
                 ", picture='" + picture + '\'' +

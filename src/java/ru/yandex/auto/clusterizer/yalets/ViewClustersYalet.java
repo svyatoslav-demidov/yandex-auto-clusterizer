@@ -16,6 +16,7 @@ import static ru.yandex.auto.clusterizer.util.ViewProcessor.prepareAnswer;
  *
  * @user: svyd
  * @date: 22.06.11
+ * @Description: Ялет, отвечающий за вывод кластеров
  */
 public class ViewClustersYalet extends AbstractDbYalet {
 
@@ -26,9 +27,9 @@ public class ViewClustersYalet extends AbstractDbYalet {
         }
         DataStore dataStore = new DataStore(jdbcTemplate);
         List<Car> cars = dataStore.getClusterByIdFromDataStore(clusterId);
-        res.add(prepareAnswer("Кластер (id = "+ Integer.toString(clusterId) +
+        res.add(prepareAnswer("Кластер (id = " + Integer.toString(clusterId) +
                 ") содержит " + Integer.toString(cars.size()) + " копий"));
-        for (Car car : cars){
+        for (Car car : cars) {
             res.add(convertCarToTag(car));
         }
     }

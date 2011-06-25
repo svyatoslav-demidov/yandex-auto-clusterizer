@@ -7,11 +7,11 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 /**
-* Date: Nov 9, 2010
-* Time: 1:45:29 PM
-*
-* @author Nikolay Malevanny nmalevanny@yandex-team.ru
-*/
+ * Date: Nov 9, 2010
+ * Time: 1:45:29 PM
+ *
+ * @author Nikolay Malevanny nmalevanny@yandex-team.ru
+ */
 class RecordMapper implements ParameterizedRowMapper<Record> {
     public Record mapRow(final ResultSet resultSet, final int rowNumber) throws SQLException {
         final Record record = new Record();

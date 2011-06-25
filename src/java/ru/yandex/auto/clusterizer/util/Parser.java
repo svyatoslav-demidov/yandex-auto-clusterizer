@@ -1,10 +1,6 @@
 package ru.yandex.auto.clusterizer.util;
 
-import com.sun.deploy.xml.XMLNode;
-import net.sf.xfresh.core.xml.Xmler;
-import org.webharvest.definition.FunctionDef;
 import org.webharvest.definition.ScraperConfiguration;
-import org.webharvest.definition.XmlNode;
 import org.webharvest.runtime.Scraper;
 
 /**

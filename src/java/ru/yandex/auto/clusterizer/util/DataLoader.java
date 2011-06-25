@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @user: svyd
  * @date: 19.06.11
- * @Description: Класс, отвечающий за подгрузку данных из .xml файла в память
+ * @Description: Класс, отвечающий за подгрузку данных из .xml файла (который создает web harvest) в память
  */
 public class DataLoader {
     private Document sourceXML;
@@ -36,7 +36,7 @@ public class DataLoader {
         NodeList root = sourceXML.getElementsByTagName("car");
         ArrayList<Car> result = new ArrayList<Car>();
         for (int i = 0; i < root.getLength(); i++) {
-            String model = "", price = "", auction = "", year = "", description = "", link = "", picture = "";
+            String model = "", price = "", year = "", description = "", link = "", picture = "";
             NodeList currentTag = root.item(i).getChildNodes();
             for (int j = 0; j < currentTag.getLength(); j++) {
                 String nodeName = currentTag.item(j).getNodeName();
@@ -45,10 +45,6 @@ public class DataLoader {
                 }
                 if ("price".equals(nodeName)) {
                     price = currentTag.item(j).getTextContent();
-                }
-
-                if ("auction".equals(nodeName)) {
-                    auction = currentTag.item(j).getTextContent();
                 }
 
                 if ("year".equals(nodeName)) {
@@ -66,7 +62,7 @@ public class DataLoader {
                 }
 
             }
-            result.add(new Car(model, price, auction, year, description, picture, link, 0));
+            result.add(new Car(model, price,  year, description, picture, link, 0));
         }
         return result;
     }

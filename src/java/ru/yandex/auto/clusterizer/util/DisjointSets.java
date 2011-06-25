@@ -5,6 +5,7 @@ package ru.yandex.auto.clusterizer.util;
  *
  * @user: svyd
  * @date: 22.06.11
+ * @Description: Класс, реализующий систему непересекающихся множеств.
  */
 
 public class DisjointSets {

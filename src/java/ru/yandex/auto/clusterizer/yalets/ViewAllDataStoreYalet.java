@@ -17,6 +17,7 @@ import static ru.yandex.auto.clusterizer.util.ViewProcessor.prepareAnswer;
  *
  * @user: svyd
  * @date: 22.06.11
+ * @Descrption: Ялет, отвечающий за вывод всей базы, вывод копий и вывод только уникальных объявлений
  */
 public class ViewAllDataStoreYalet extends AbstractDbYalet {
 
@@ -38,7 +39,7 @@ public class ViewAllDataStoreYalet extends AbstractDbYalet {
             if ("unique".equals(queryType)) {
                 if (lastCluster != car.getClusterId()) res.add(convertCarToTag(car));
             } else if ("copies".equals(queryType)) {
-                if (lastCluster == car.getClusterId() && clusters.contains(car.getClusterId())){
+                if (lastCluster == car.getClusterId() && clusters.contains(car.getClusterId())) {
                     res.add(convertCarToTag(car));
                     clusters.remove(car.getClusterId());
                     lastCluster = car.getClusterId();

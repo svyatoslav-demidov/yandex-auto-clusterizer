@@ -1,13 +1,7 @@
 package net.sf.xfresh.ext;
 
 import net.sf.xfresh.jetty.AbstractJettyTest;
-import net.sf.xfresh.jetty.JettyServerInitializer;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.springframework.beans.factory.annotation.Required;
-import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
 
 import java.io.InputStreamReader;
 
