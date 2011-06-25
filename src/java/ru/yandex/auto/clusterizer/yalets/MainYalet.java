@@ -9,6 +9,7 @@ import net.sf.xfresh.db.AbstractDbYalet;
  *
  * @user: svyd
  * @date: 11.06.11
+ * @Description: Пустой Ялет, выполняющий функции главной страницы.
  */
 public class MainYalet extends AbstractDbYalet {
 

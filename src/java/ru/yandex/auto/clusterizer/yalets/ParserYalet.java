@@ -6,6 +6,7 @@ import net.sf.xfresh.db.AbstractDbYalet;
 import ru.yandex.auto.clusterizer.datastore.DataStore;
 import ru.yandex.auto.clusterizer.model.Car;
 import ru.yandex.auto.clusterizer.util.DataLoader;
+import ru.yandex.auto.clusterizer.util.Parser;
 
 import java.util.List;
 
@@ -17,6 +18,8 @@ import static ru.yandex.auto.clusterizer.util.ViewProcessor.prepareAnswer;
  *
  * @user: svyd
  * @date: 21.06.11
+ * @Description: Ялет, отвечающий за сбор информации.
+ * Сначала запускается web harvest, затем полученные объявления кластеризуются и записываются в базу данных
  */
 public class ParserYalet extends AbstractDbYalet {
     public void process(InternalRequest req, InternalResponse res) {
@@ -26,8 +29,8 @@ public class ParserYalet extends AbstractDbYalet {
             res.add(prepareAnswer("Ошибочный запрос"));
             return;
         }
-        //Parser parser = new Parser("resources/wh-config-template.xml", "resources/");
-        //parser.parse(query, loops);
+        Parser parser = new Parser("resources/wh-config-template.xml", "resources/");
+        parser.parse(query, loops);
         List<Car> carsAds = new DataLoader("resources/cars-ad.xml").getListOfCarsAds();
         carsAds = makeClusters(carsAds);
         DataStore dataStore = new DataStore(jdbcTemplate);

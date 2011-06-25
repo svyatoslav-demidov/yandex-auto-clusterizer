@@ -234,10 +234,6 @@ public class Metrics {
 
 
     public static double getDistance(Car carA, Car carB) {
-//        System.err.println("[");
-//        System.err.println(carA);
-//        System.err.println(carB);
-
         String descriptionA = carA.getDescription().toLowerCase();
         String descriptionB = carB.getDescription().toLowerCase();
         //Extract condition

@@ -21,7 +21,6 @@ import static ru.yandex.auto.clusterizer.util.ViewProcessor.prepareAnswer;
  */
 public class ViewAllDataStoreYalet extends AbstractDbYalet {
 
-    @Override
     public void process(InternalRequest req, InternalResponse res) {
         DataStore dataStore = new DataStore(jdbcTemplate);
         String queryType = req.getParameter("query-type");
