@@ -13,7 +13,7 @@
 
             <head>
                 <title>
-                    <xsl:text>Тестовое задание</xsl:text>
+                    <xsl:text>Просмотр</xsl:text>
                 </title>
             </head>
             <body>
@@ -50,7 +50,7 @@
         <h2>Mодель:
             <xsl:value-of select="model"/>
         </h2>
-        <!--<image src = "{picture}"></image> -->
+        <image src = "{picture}"></image>
         <br></br>
 
         <h3>Описание:</h3>
@@ -68,11 +68,11 @@
         </h4>
         <a href="{link}" target="_blank">Исходное объявление</a>
 
+        <p>Кластер: <xsl:value-of select="cluster-id"/></p>
         <form method="get" action="/clusters.xml">
             <input type="hidden" name="cluster-id" value="{cluster-id}"/>
             <input type="submit" value="Просмотреть кластер: {cluster-id}"/>
         </form>
-        <!--<p>Кластер: <xsl:value-of select="cluster-id"/></p>-->
         <hr/>
     </xsl:template>
 

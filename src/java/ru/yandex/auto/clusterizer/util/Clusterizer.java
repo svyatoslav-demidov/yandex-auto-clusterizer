@@ -14,7 +14,7 @@ import static ru.yandex.auto.clusterizer.util.Metrics.getDistance;
  * @Description: Класс, отвечающий за кластеризацию. Кластеры отображаются в систему непересекающихся множеств
  */
 public class Clusterizer {
-    static final double BORDER = 0.300;
+    static final double BORDER = 0.2;
 
     public static List<Car> makeClusters(List<Car> data) {
         DisjointSets disjointSets = new DisjointSets(data.size());

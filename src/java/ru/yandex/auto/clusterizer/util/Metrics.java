@@ -101,7 +101,7 @@ public class Metrics {
         if (colorA.length() == 0 || colorB.length() == 0) {
             return 1.0 - 1.0 / 7.0;
         }
-        return 1;
+        return 1.0;
     }
 
     private static double getDistanceByYear(int yearA, int yearB) {
@@ -111,7 +111,7 @@ public class Metrics {
         if (yearA == 0 || yearB == 0) {
             return 0.3;
         }
-        return (Math.abs(yearA - yearB) <= 1 ? 0.05 : 1.0);
+        return (Math.abs(yearA - yearB) <= 1 ? 0.4 : 1.0);
     }
 
     private static int extractPrice(String price) {
@@ -152,8 +152,8 @@ public class Metrics {
         if (valueB < 1000) {
             valueB *= 1000;
         }
-        if (((double) Math.abs(valueA - valueB)) / Math.max(valueA, valueB) < 0.8) {
-            return 0.2;
+        if (((double) Math.abs(valueA - valueB)) / Math.max(valueA, valueB) < 0.15) {
+            return 0.18;
         }
         return 1.0;
     }
@@ -275,8 +275,8 @@ public class Metrics {
         double distanceByDescription = getDistanceByDescription(descriptionA, descriptionB);
 
         //prepearing distance
-        double distance = distanceByColor*1.1 + distanceByBodytype*1.1 + distanceByPrice*1.1 +
-                +distanceByMileage*1.1 + distanceByYear*1.1 + distanceByCondition +
+        double distance = distanceByColor * 1.4 + distanceByBodytype * 1.4 + distanceByPrice +
+                +distanceByMileage + distanceByYear * 1.5 + distanceByCondition +
                 +distanceByDescription;
 
         return (distance);
