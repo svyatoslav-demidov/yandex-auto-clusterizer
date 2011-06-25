@@ -1,0 +1,4 @@
+src/datastore/ : .sql для MySQL
+src/scripts/ : конфигурация лога и beans файл
+src/java/ : директория с файлами исходников
+report/ : небольшой отчет
