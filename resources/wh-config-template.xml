@@ -4,8 +4,7 @@
     <include path="functions.xml"/>
 
     <!--query : запрос, по которому нужно собрать объявления с Яндекс.авто -->
-    <!--<var-def name="query">ВАЗ 2109</var-def> -->
-
+    
     <var-def name="car">
         <call name="download-multipage-list">
             <call-param name="pageUrl">http://auto.yandex.ru/search.xml?text=
