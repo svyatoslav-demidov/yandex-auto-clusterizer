@@ -192,11 +192,11 @@ public class Metrics {
         return "";
     }
 
-    private static double getDistanceByBodytype(String bodytepeA, String bodytypeB) {
-        if (bodytepeA.equals(bodytypeB)) {
+    private static double getDistanceByBodytype(String bodytypeA, String bodytypeB) {
+        if (bodytypeA.equals(bodytypeB)) {
             return 0.0;
         }
-        if (bodytepeA.length() == 0 || bodytypeB.length() == 0) {
+        if (bodytypeA.length() == 0 || bodytypeB.length() == 0) {
             return 0.6;
         }
         return 1.0;
