@@ -66,7 +66,7 @@ public class Metrics {
 
 
     private static int extractYear(String year) {
-        if (year.length() < 3) {
+        if (year.length() < 4) {
             return 0;
         }
         return Integer.parseInt(year.substring(0, 4));
