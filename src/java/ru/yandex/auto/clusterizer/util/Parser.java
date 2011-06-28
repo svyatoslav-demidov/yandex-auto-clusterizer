@@ -8,7 +8,7 @@ import org.webharvest.runtime.Scraper;
  *
  * @user: svyd
  * @date: 17.06.11
- * @Description: Класс-обертка над web-harvest, собирающий объявления с Яедекс.авто
+ * @Description: Класс-обертка над web-harvest, собирающий объявления с Яндекс.авто
  */
 public class Parser {
     private ScraperConfiguration scraperConfiguration;
